@@ -1,6 +1,16 @@
-# Project Proposal (Draft): Non-Visual, Low-Power Sensing of Social Interaction
+# Chatter: Detecting Social Interaction in a Room with Non-Visual Modalities
 
-Joseph Seok, Ziang Xue
+Joseph Seok, Ziang Xue · ECE M202A / CS M213A, Fall 2026
+
+## Project updates
+
+- **Nov 7, 2026: Midterm checkpoint slides:** [P08_Checkpoint.pdf](milestones/P08_Checkpoint.pdf)
+- **Nov 6, 2026: Combining neighbouring windows:** averaging the zone predictions over 3 s lowers the median error from 49 cm to 42 cm on the held-out session (past-only: 46 cm). Notebook: [experiment_temporal.ipynb](https://github.com/ZiangXue/chatter/blob/c2600e6/feasibility/experiment/experiment_temporal.ipynb)
+- **Nov 2, 2026: Feasibility test:** can three phone microphones locate one speaker in a room? Offline replay of three recorded sessions; trained on two, tested once on the third (826 one-second windows). Median error: 98 cm for a no-audio baseline, 183 cm for GCC-PHAT time delays, 60–62 cm for small learned models on the frequency balance between phones, 49 cm as a 50 cm zone classifier. Notebooks: [feasibility/experiment](https://github.com/ZiangXue/chatter/tree/c2600e6/feasibility/experiment)
+
+---
+
+# Project Proposal (October 2026): Non-Visual, Low-Power Sensing of Social Interaction
 
 ## Question
 
@@ -62,7 +72,7 @@ All inference runs on the device itself; no raw data is sent to a cloud or data 
 
 Before building the audio models, we are checking whether a speaker's 2D position can be estimated from a few separate single-microphone devices (plan and scope: [feasibility/feasibility_test.md](feasibility/feasibility_test.md)). Training and evaluating that needs a position label for every moment of every recording, so the first thing we built is a **ground-truth system**: an ordinary wall camera plus a YOLO pose model that reports where a person stands on the floor, live, in meters. The camera is used only to produce labels during data collection, never at inference time.
 
-**Status:** the camera calibration and the live tracker work. We have not yet recorded audio, and the tracker has not yet been evaluated on a person walking across the room (see [Not done yet](#not-done-yet)).
+**Status:** the camera calibration and the live tracker work, three sessions are recorded and synced, and the first models are trained and evaluated (results in [Project updates](#project-updates)). The tracker has not yet been evaluated on a person walking across the room (see [Not done yet](#not-done-yet)).
 
 ### Hardware and software setup
 
@@ -71,7 +81,7 @@ Before building the audio models, we are checking whether a speaker's 2D positio
 | Aqara G100 camera, wall mounted | 1920×1080 H.264 at 20 fps, streamed over Wi-Fi as local RTSP (port 8554, TCP). Wide-angle lens with visible barrel distortion |
 | Mac (Apple silicon) | Receives the stream and runs everything: YOLO11m-pose on the Apple GPU at 1280 px (about 48 ms per frame, ~20 fps, ~60 ms end-to-end lag), the calibration math, and the web server |
 | Tape measure, floor stickers, the room's rug | Calibration landmarks |
-| 2 iPhones + 1 iPad *(planned)* | The three single-microphone nodes for the later recording sessions |
+| 2 iPhones + 1 iPad | The three single-microphone nodes for the later recording sessions |
 
 ```
 camera --RTSP--> OpenCV capture --> YOLO pose --> ankle pixels --> calibrated floor mapping --> (x, y) in the room
@@ -164,5 +174,5 @@ the three claps at the start of each session (hand closings found in the video g
 - Measure each phone's clock drift: one recording of about 10 minutes with claps at both ends would do it, since a phone's
   clock rate is a property of the phone.
 - Evaluate the tracker against known floor points while walking, including the label error when moving.
-- Run the baselines and learned models from the plan on the dataset.
 - Go/no-go criteria for the feasibility test (to be set with Mani).
+
