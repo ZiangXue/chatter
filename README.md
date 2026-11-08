@@ -4,6 +4,7 @@ Joseph Seok, Ziang Xue · ECE M202A / CS M213A, Fall 2026
 
 ## Project updates
 
+- **Nov 8, 2026: Drop-one-phone ablation:** on the existing recordings, all three phones give 59 cm median error on the held-out session; leaving any one phone out gives 77–88 cm (+18 to +30 cm, 95% CI excludes zero), so all three phones are needed. Notebook: [experiment_phone_ablation.ipynb](https://github.com/ZiangXue/chatter/blob/9f69ac3/feasibility/experiment/experiment_phone_ablation.ipynb)
 - **Nov 7, 2026: Midterm checkpoint slides:** [P08_Checkpoint.pdf](milestones/P08_Checkpoint.pdf)
 - **Nov 6, 2026: Combining neighbouring windows:** averaging the zone predictions over 3 s lowers the median error from 49 cm to 42 cm on the held-out session (past-only: 46 cm). Notebook: [experiment_temporal.ipynb](https://github.com/ZiangXue/chatter/blob/c2600e6/feasibility/experiment/experiment_temporal.ipynb)
 - **Nov 2, 2026: Feasibility test:** can three phone microphones locate one speaker in a room? Offline replay of three recorded sessions; trained on two, tested once on the third (826 one-second windows). Median error: 98 cm for a no-audio baseline, 183 cm for GCC-PHAT time delays, 60–62 cm for small learned models on the frequency balance between phones, 49 cm as a 50 cm zone classifier. Notebooks: [feasibility/experiment](https://github.com/ZiangXue/chatter/tree/c2600e6/feasibility/experiment)
