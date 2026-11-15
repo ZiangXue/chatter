@@ -1,0 +1,45 @@
+{
+ "file": "audio_check.wav",
+ "sample_rate": 48000,
+ "n_samples": 72684154,
+ "duration_s": 1514.2532083333333,
+ "channels": [
+  "iphone8",
+  "ipad",
+  "Macbook",
+  "iphoneair"
+ ],
+ "note": "time zero = start of the reference file; channel sample i = device file sample i + sample_shift (offsets from the start claps, no drift correction); stereo recordings averaged to mono",
+ "reference": "iphoneair",
+ "sample_shifts": {
+  "iphone8": 359261,
+  "ipad": 403805,
+  "Macbook": 249446,
+  "iphoneair": 0
+ },
+ "offset_s": {
+  "iphone8": 7.4846,
+  "ipad": 8.4126,
+  "Macbook": 5.1968,
+  "iphoneair": 0.0
+ },
+ "end": "Macbook file time 1519.45 s (where that recording stopped being usable)",
+ "positions_m": {
+  "iphone8": [
+   0.0,
+   0.0
+  ],
+  "ipad": [
+   3.0353,
+   0.0
+  ],
+  "Macbook": [
+   2.72,
+   5.41
+  ],
+  "iphoneair": [
+   0.05,
+   5.41
+  ]
+ }
+}

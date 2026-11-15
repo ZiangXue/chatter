@@ -1,0 +1,6 @@
+# raw data: large, and it has voices and faces. Shared through a drive link; the WAV is rebuilt with tools/make_wav4.py
+data/
+# camera frames show people
+hallway/frames/
+.DS_Store
+__pycache__/

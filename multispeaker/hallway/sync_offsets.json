@@ -1,0 +1,44 @@
+{
+ "description": "Start-clap time sync of the recordings in data/recordings/. file_time[device] = file_time[reference] + offset_s[device]: a sound at reference file time t is at t + offset in the other file. Devices were together for the claps, so travel time between them is ignored. No drift correction.",
+ "reference": "iphoneair",
+ "offset_s": {
+  "iphoneair": 0.0,
+  "Macbook": 5.1968,
+  "ipad": 8.4126,
+  "iphone8": 7.4846
+ },
+ "offset_spread_over_3_claps_ms": {
+  "iphoneair": 0.0,
+  "Macbook": 2.3,
+  "ipad": 0.02,
+  "iphone8": 0.1
+ },
+ "start_claps_file_time_s": {
+  "Macbook": [
+   7.255,
+   8.459,
+   9.639
+  ],
+  "ipad": [
+   10.471,
+   11.674,
+   12.855
+  ],
+  "iphone8": [
+   9.543,
+   10.746,
+   11.927
+  ],
+  "iphoneair": [
+   2.058,
+   3.262,
+   4.442
+  ]
+ },
+ "durations_s": {
+  "Macbook": 1545.193,
+  "ipad": 1551.495,
+  "iphone8": 1554.737,
+  "iphoneair": 1546.923
+ }
+}

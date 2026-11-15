@@ -1,0 +1,27 @@
+{
+ "frame": "grid_hallway.json: X across the hall from the left wall, Y along the hall away from the camera, metres",
+ "positions_m": {
+  "iphone8": [
+   0.0,
+   0.0
+  ],
+  "ipad": [
+   3.0353,
+   0.0
+  ],
+  "Macbook": [
+   2.72,
+   5.41
+  ],
+  "iphoneair": [
+   0.05,
+   5.41
+  ]
+ },
+ "notes": {
+  "iphone8": "origin (left wall corner)",
+  "ipad": "right wall, same across-hall line as the origin: X = hall width",
+  "Macbook": "the laptop on the floor in front of the trash can: footprint centre, +-0.15 m",
+  "iphoneair": "left wall, across from the MacBook (same Y); X is a guess, +-0.15 m"
+ }
+}

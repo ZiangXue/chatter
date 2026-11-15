@@ -1,0 +1,30 @@
+{
+ "frame": "X across the hall from the left wall, Y along the hall away from the camera; origin = phone corner (left door edge meets left floor edge); units inches",
+ "H_image_px_to_floor_in": [
+  [
+   -0.1368848414392096,
+   -0.117356709337698,
+   174.438072045102
+  ],
+  [
+   0.0016706698796008412,
+   0.2647333930719109,
+   -319.868260818671
+  ],
+  [
+   6.554328328107716e-05,
+   -0.0022798248513652497,
+   1.0
+  ]
+ ],
+ "width_in": 119.5,
+ "image": "frames/sample_frame_1080.jpg (1920x1080)",
+ "measurements": {
+  "width_in": 119.5,
+  "origin_to_line5_in": 205.0,
+  "line4_to_line3_in": 36.0,
+  "line4_to_line1_in": 47.0,
+  "line1_to_line2_in": 33.0
+ },
+ "residual_rms_in": 0.9043730395663974
+}
