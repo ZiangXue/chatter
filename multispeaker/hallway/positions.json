@@ -1,0 +1,24 @@
+{
+ "description": "Floor positions of the two speakers from the fixed camera, one row per processed video frame.",
+ "time_base": "t_wav_s = seconds in data/audio_4ch.wav (zero = start of the iPhone Air file) = video time - video_sync offset_s",
+ "video_offset_s": 2.6287,
+ "sample_rate_hz": 10.0,
+ "frame": "floor frame of devices.json: x across the hall from the left wall, y along the hall away from the camera, metres (x range 0 to 3.04)",
+ "columns": {
+  "x_m_y_m": "raw position, blank if not detected",
+  "x_s_m_y_s_m": "smoothed (Savitzky-Golay 1 s, gaps <= 0.6 s filled)",
+  "status": "tracked | interp (gap filled) | lost",
+  "n_ankles": "ankle keypoints used, 1 or 2"
+ },
+ "speakers": {
+  "A": "the person with the darker trousers",
+  "B": "the person with the lighter trousers"
+ },
+ "coverage": {
+  "A": 0.976,
+  "B": 0.982
+ },
+ "n_rows": 15142,
+ "method": "YOLO11m-pose ankles -> floor homography; speakers separated by thigh colour",
+ "caveats": "Ankle-based. Floor resolution is about 3 cm/px at 5 m and 6 cm/px at 9 m in 1080p (twice that in this 720p video), so expect errors of 0.1 m near the camera and more at the far end, plus the grid's own 0.9 in. A person whose feet are cut off by the bottom of the frame (very close to the camera) is 'lost'. Speakers are told apart by trouser colour, so a wrong swap is possible when the two stand close together."
+}

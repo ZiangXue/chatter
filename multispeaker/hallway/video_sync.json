@@ -1,0 +1,27 @@
+{
+ "description": "video_time = reference_file_time + offset_s; from the 3 start claps heard in the video's audio track, median of the 3. mid_session_residual_ms: where the video hears the mid-session claps relative to this offset (drift check; includes the arrival-time differences between camera and reference phone).",
+ "reference": "iphoneair",
+ "offset_s": 2.6287,
+ "offset_per_clap_s": [
+  2.6245,
+  2.6288,
+  2.6287
+ ],
+ "spread_ms": 4.27,
+ "video_claps_s": [
+  4.671,
+  5.883,
+  7.071
+ ],
+ "reference_claps_s": [
+  2.058,
+  3.262,
+  4.442
+ ],
+ "mid_session_residual_ms": [
+  5.6,
+  12.38,
+  5.13
+ ],
+ "video_duration_s": 1554.597
+}
